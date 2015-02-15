@@ -7,7 +7,6 @@ package co.edu.udea.sphinxjava;
 
 import edu.cmu.sphinx.api.Configuration;
 import edu.cmu.sphinx.api.LiveSpeechRecognizer;
-import edu.cmu.sphinx.api.SpeechResult;
 import java.io.IOException;
 
 /**
@@ -28,9 +27,18 @@ public class SphinxJava {
 // Set path to dictionary.
 //        configuration.setDictionaryPath("resource:/WSJ_8gau_13dCep_16k_40mel_130Hz_6800Hz/dict/cmudict.0.6d");
         configuration.setDictionaryPath("voxforge-es-0.1.1/etc/voxforge_es_sphinx.dic");
+//        configuration.setDictionaryPath("voxforge-es-0.1.1/etc/voxforge_es_sphinx_MX.dic");
+//        configuration.setDictionaryPath("modeloMedicinaEspañol/medicina.dic");
+//        configuration.setDictionaryPath("medicina.dic");
+//        configuration.setDictionaryPath("temp.dic");
+//        configuration.setDictionaryPath("voxforge-es-0.1.1/etc/med.dic");
 // Set language model.
 //        configuration.setLanguageModelPath("models/language/en-us.lm.dmp");
         configuration.setLanguageModelPath("voxforge-es-0.1.1/etc/voxforge_es_sphinx.transcription.test.lm");
+//        configuration.setLanguageModelPath("modeloMedicinaEspañol/medicina.lm");
+//        configuration.setLanguageModelPath("medic.lm");
+//        configuration.setLanguageModelPath("voxforge-es-0.1.1/etc/med.lm");
+        
         System.out.println("esta agregando la config al recognizer");
         LiveSpeechRecognizer recognizer = new LiveSpeechRecognizer(configuration);
 // Start recognition process pruning previously cached data.
@@ -46,7 +54,11 @@ public class SphinxJava {
         recognizer.startRecognition(true);
         System.out.println("config agregada, diga algo en español");
         while (true) {
+            long time_start, time_end;
+            time_start = System.currentTimeMillis();
             String utterance = recognizer.getResult().getHypothesis();
+            time_end = System.currentTimeMillis();
+            System.out.println("the task has taken " + (time_end - time_start) + " milliseconds");
             if (utterance.equals("personas")) {
                 break;
             } else {
