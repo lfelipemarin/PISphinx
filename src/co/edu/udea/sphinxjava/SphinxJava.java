@@ -26,17 +26,17 @@ public class SphinxJava {
         configuration.setAcousticModelPath("voxforge-es-0.1.1/model_parameters/voxforge_es_sphinx.cd_cont_1500");
 // Set path to dictionary.
 //        configuration.setDictionaryPath("resource:/WSJ_8gau_13dCep_16k_40mel_130Hz_6800Hz/dict/cmudict.0.6d");
-        configuration.setDictionaryPath("voxforge-es-0.1.1/etc/voxforge_es_sphinx.dic");
+//        configuration.setDictionaryPath("voxforge-es-0.1.1/etc/voxforge_es_sphinx.dic");
 //        configuration.setDictionaryPath("voxforge-es-0.1.1/etc/voxforge_es_sphinx_MX.dic");
 //        configuration.setDictionaryPath("modeloMedicinaEspañol/medicina.dic");
-//        configuration.setDictionaryPath("medicina.dic");
+        configuration.setDictionaryPath("medic.dic");
 //        configuration.setDictionaryPath("temp.dic");
 //        configuration.setDictionaryPath("voxforge-es-0.1.1/etc/med.dic");
 // Set language model.
 //        configuration.setLanguageModelPath("models/language/en-us.lm.dmp");
-        configuration.setLanguageModelPath("voxforge-es-0.1.1/etc/voxforge_es_sphinx.transcription.test.lm");
+//        configuration.setLanguageModelPath("voxforge-es-0.1.1/etc/voxforge_es_sphinx.transcription.test.lm");
 //        configuration.setLanguageModelPath("modeloMedicinaEspañol/medicina.lm");
-//        configuration.setLanguageModelPath("medic.lm");
+        configuration.setLanguageModelPath("medic.lm");
 //        configuration.setLanguageModelPath("voxforge-es-0.1.1/etc/med.lm");
         
         System.out.println("esta agregando la config al recognizer");
